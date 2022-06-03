@@ -46,19 +46,18 @@ func (s *Server) ProcessMessage(client models.Client, payload []byte) *Server {
 	switch m.Action {
 	case "broadcast":
 		s.Broadcast(m.ChatroomId, []byte(m.Message), client)
-		break
 
 	case "subscribe":
 		s.Subscribe(&client, m.ChatroomId)
-		break
+		s.Send(&client, "Subscribed Successfully!")
 
 	case "unsubscribe":
 		s.Unsubscribe(&client, m.ChatroomId)
-		break
+		s.Send(&client, "Unsubscribed Successfully!")
 
 	default:
 		s.Send(&client, "Server: Action unrecognized")
-		break
+
 	}
 
 	return s

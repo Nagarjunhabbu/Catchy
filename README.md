@@ -3,27 +3,26 @@
 
  Follow these setup to run the Project:
 
-        1. Get the code from Github: $ git clone https://github.com/Nagarjunhabbu/Catchy.git
+        1. Get the code from Github: 
+                    $cd go/src
+                    $ git clone https://github.com/Nagarjunhabbu/Catchy.git
 
-        2. To get the Dependencies : $ go get ./...
-
-        3. Install docker :
+    
+        2. Install docker :
                 - $ sudo apt install docker.io
                 - $ sudo snap install docker
                 - $ sudo docker images
                 - $ sudo docker ps -a
                 - $ sudo docker ps  (To check for containers in a running state, use the following command)
 
-        4. Install mongoDB
+        3. Install mongoDB
                 - $ sudo docker search mongodb
                 - $ mkdir -pv mongodb/database
-                - $ cd mongodb
-                - $ nano docker-compose.yml
                 - $ docker-compose up 
 
 
-        5. Run the Server: $ make run
-        6. Use any Websocket client for client server interaction
+        4. Run the Server: $ make run
+        5. Use any Websocket client for client server interaction
              - https://websocketking.com/  (websocket client)
 
 
