@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nagarjun/go/src/catchy'
+go build -o bin/main main.go
+make: Leaving directory '/home/nagarjun/go/src/catchy'
+ 
