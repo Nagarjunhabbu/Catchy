@@ -62,28 +62,33 @@ All the CRUDL operations for users and chatrooms are performed using mongoDB
 ---------------------------------------------------------------------------------------------------------------------------------
 
                                         Operations to be performed in websocketclient
-                                                 (create two connection)
+                                                
+step 1 : create two connection
+step 2 : connect both users 
 
-ws://localhost:8000/socket/{user1_id}                                           ws://localhost:8000/socket/{user2_id }
+         ws://localhost:8000/socket/{user1_id}   
+         ws://localhost:8000/socket/{user2_id}                                         
 
-1. click on connect                                                              1. click on connect
-2. {                                                                             2.{
-      "action" :"subscribe",                                                          "action" :"subscribe",                                                 
-       "chatroomId" :"546",                                                            "chatroomId" :"546",
-       "message":"Hello world!"                                                        "message":"Hello world!"
-    }                                                                                 }
-    click send                                                                          click send
-
+         click on connect on both sides                                                           
+step 3 : subscribe to the chatroom from both side by giving same chatroomId
+            {                                                                             
+                "action" :"subscribe",                                                                                                         
+                 "chatroomId" :"546",                                                            
+                 "message":"Hello world!"                                                        
+             }                                                                                 
+    click send                                                                         
     both the users are connected to chatroom "546" so they can communicate until one of the user "unsubscribe"
 
-3.  {
-      "action" :"broadcast",
-       "chatroomId" :"546",
-      "message":"Hello world!"
-    }
+step 4 : communicate by sending message from both Users 
+                      {
+                           "action" :"broadcast"
+                            "chatroomId" :"546",
+                            "message":"Hello world!"
+                     }
 
-3. {
-      "action" :"unsubscribe",
-       "chatroomId" :"546",
-      "message":"Hello world!"
-    }
+step 4: Unsubscribe one user and send message from another user
+            {
+                    "action" :"unsubscribe",
+                    "chatroomId" :"546",
+                    "message":"Hello world!"
+            }
