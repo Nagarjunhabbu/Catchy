@@ -3,7 +3,7 @@
 
  Follow these setup to run the Project:
 
-        1. Get the code from Github: $ git clone https://github.com/Nagarjunhabbu/TCorp.git
+        1. Get the code from Github: $ git clone https://github.com/Nagarjunhabbu/Catchy.git
 
         2. To get the Dependencies : $ go get ./...
 
